@@ -25,7 +25,7 @@ export class PivotTableComponent implements AfterViewInit{
 
       this.table = this.tableRef.nativeElement;
       
-      var row = this.table.insertRow();  
+      var row = this.table.insertRow(0);  
       for (var i = 0; i <= cells; ++i) {
         let cell = row.insertCell(i); 
         if (i!=0) {
@@ -33,20 +33,20 @@ export class PivotTableComponent implements AfterViewInit{
         } 
       }      
 
-      for (var i = 0; i < rows; ++i) {
-        var currentRow = this.table.insertRow();
+      for (var i = 1; i <= rows; ++i) {
+        var currentRow = this.table.insertRow(i);
         for (var j = 0; j <= cells; ++j) {          
           if (j==0) {
-            let cell = currentRow.insertCell(j);
-            cell.innerHTML = frequencyArr[i];
-          }else{
+            let cell = currentRow.insertCell();
+            cell.innerHTML = frequencyArr[i-1];
+          }else{           
             var groupObj = _.find(data, function(obj){
-              return (obj.frequency == frequencyArr[i] && obj.recency == recencyArr[j-1]);
+              return (obj.frequency == frequencyArr[i-1] && obj.recency == recencyArr[j-1]);
             });
             if (groupObj) {              
               var arr = groups[groupObj.group];
               if(arr){
-                let cell = currentRow.insertCell(j);                 
+                var cell = currentRow.insertCell();                 
                 cell.colSpan =  Object.keys(_.groupBy(arr, "recency")).length;
                 cell.rowSpan =  Object.keys(_.groupBy(arr, "frequency")).length;
 
@@ -64,8 +64,9 @@ export class PivotTableComponent implements AfterViewInit{
                 if (groupObj.group == "at risk") {
                   cell.className = "at-risk";
                 }
+                delete groups[groupObj.group]; 
               }
-              delete groups[groupObj.group];             
+
             }            
           }
         }

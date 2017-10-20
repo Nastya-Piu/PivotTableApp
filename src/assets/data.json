@@ -24,19 +24,19 @@
     },
   
     {
-        "group": "at risk",
+        "group": "red alert",
         "frequency": "4-5",
         "recency": "181-365",
         "frequencyValue": 445
     },
     {
-        "group": "at risk",
+        "group": "red alert",
         "frequency": "6-9",
         "recency": "181-365",
         "frequencyValue": 178
     },
     {
-        "group": "at risk",
+        "group": "red alert",
         "frequency": "10+",
         "recency": "181-365",
         "frequencyValue": 120
