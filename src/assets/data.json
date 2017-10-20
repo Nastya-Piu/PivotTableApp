@@ -1,0 +1,62 @@
+[{
+        "group": "red alert",
+        "frequency": "4-5",
+        "recency": "366+",
+        "frequencyValue": 148
+    },
+    {
+        "group": "red alert",
+        "frequency": "6-9",
+        "recency": "366+",
+        "frequencyValue": 90
+    },
+    {
+        "group": "red alert",
+        "frequency": "10+",
+        "recency": "366+",
+        "frequencyValue": 20
+    },
+     {
+        "group": "red alert",
+        "frequency": "12",
+        "recency": "366+",
+        "frequencyValue": 20
+    },
+  
+    {
+        "group": "at risk",
+        "frequency": "4-5",
+        "recency": "181-365",
+        "frequencyValue": 445
+    },
+    {
+        "group": "at risk",
+        "frequency": "6-9",
+        "recency": "181-365",
+        "frequencyValue": 178
+    },
+    {
+        "group": "at risk",
+        "frequency": "10+",
+        "recency": "181-365",
+        "frequencyValue": 120
+    },
+    {
+        "group": "at risk",
+        "frequency": "4-5",
+        "recency": "91-180",
+        "frequencyValue": 567
+    },
+    {
+        "group": "at risk",
+        "frequency": "6-9",
+        "recency": "91-180",
+        "frequencyValue": 134
+    },
+    {
+        "group": "at risk",
+        "frequency": "10+",
+        "recency": "91-180",
+        "frequencyValue": 82
+    }
+]

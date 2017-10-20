@@ -1,1 +1,107 @@
-/* You can add global styles to this file, and also import other style files */
+table{
+	border-collapse: collapse;	
+}
+h1{
+	margin-bottom: 30px;
+}
+.table-responsive{
+	width: 550px;
+	padding: 20px;
+	overflow-x: visible;
+}
+.pivot-table td, .pivot-table th{
+	padding: 15px;
+	text-align: center;
+	border-collapse: collapse;	
+}
+.pivot-table td{
+	vertical-align: middle!important;
+}
+.pivot-table td:first-child{
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+	color: #9C9C9D;
+	font-weight: bold;
+	padding: 20px 15px!important;
+}
+.pivot-table th{
+	border-left: 1px solid #eee;
+	border-right: 1px solid #eee;
+	color: #9C9C9D;
+	padding: 10px 40px;
+}
+.pivot-table tr:first-child td:first-child{
+	border-top: none;
+}
+.pivot-table td.red-alert{
+	background: #E86C69;
+	cursor: pointer;
+}
+.pivot-table td.at-risk{
+	background: #FFA071;
+	cursor: pointer;
+}
+.pivot-table td.red-alert:hover{
+	background: #ec3206;
+}
+.pivot-table td.at-risk:hover{
+	background: #ea600c;
+}
+.pivot-table td.empty{
+	background: #eee;
+}
+.pivot-table td.red-alert, td.at-risk{
+	color: white;
+}
+.pivot-table td>span{
+	display: block;
+	background: rgba(0,0,0,0.3);
+	padding: 5px;
+	width: 150px;
+	margin: 0 auto;
+	position: relative;
+}
+.pivot-table td:hover>span{
+	background: rgba(0,0,0,0.6);
+}
+td.red-alert .popover{
+	border-left: 4px solid #ec3206;
+}
+td.at-risk .popover{
+	border-left: 4px solid  #ea600c;
+}
+td.red-alert .popover b{
+	background: #ec3206;
+}
+td.at-risk .popover b{
+	background: #ea600c;
+}
+.popover hr{
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+.popover{	
+	border-radius: 0;
+	text-align: left;
+	border: none;
+	color: black;
+	padding: 20px;
+	top:50px;
+	width: 150px;
+}
+.popover ul li{
+	padding: 3px;
+	margin: 2px 0;
+}
+.popover ul li b{
+	width: 40px;	
+	padding: 5px;
+	display: inline-block;
+	color: white;
+}
+.popover:after{
+	position: absolute;	
+}
+td:hover >span>.popover{
+	display: block;
+}
