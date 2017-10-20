@@ -1,20 +1,17 @@
-import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { CustomersService } from '../services/customers.service';
 import * as _ from 'underscore';
 
 @Component({
   selector: 'pivot-table',
-  templateUrl: './pivot-table.component.html',  
-  providers: [CustomersService] 
+  templateUrl: './pivot-table.component.html'
 })
 
-export class PivotTableComponent implements OnInit, AfterViewInit{
+export class PivotTableComponent implements AfterViewInit{
   @ViewChild('pivottable') tableRef:ElementRef; 
-  private table:HTMLTableElement;  
+  table:HTMLTableElement;  
 
-  constructor(private customersService: CustomersService) { }    
-
-  ngOnInit(): void {} 
+  constructor(private customersService: CustomersService) { }   
 
   ngAfterViewInit(): void {
 
@@ -54,7 +51,7 @@ export class PivotTableComponent implements OnInit, AfterViewInit{
                 cell.rowSpan =  Object.keys(_.groupBy(arr, "frequency")).length;
 
                 var sum = _.reduce(arr, function(memo, num){ return memo + num.frequencyValue; }, 0);               
-                var popup = `<div class="popover"><h5 class="text-muted"><i>Frequency info:</i></h5><hr><ul class="list-unstyled">`;//<popover [groupData]="${arr}"></popover>
+                var popup = `<div class="popover"><h5 class="text-muted"><i>Frequency info:</i></h5><hr><ul class="list-unstyled">`;
                 for (let i = 0; i < arr.length; ++i) {
                   popup+=`<li><b>${arr[i].frequency}:</b>&nbsp;${arr[i].frequencyValue}</li>`
                 };
